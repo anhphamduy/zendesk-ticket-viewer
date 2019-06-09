@@ -1,10 +1,7 @@
 from flask import Flask
-from flask_jsglue import JSGlue
 from zenpy import Zenpy
 
 from config import config
-
-jsglue = JSGlue()
 
 
 def create_app(config_name):
