@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Requester</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for ticket in tickets %}
+      <tr data-attribute="{{ ticket.id }}">
+        <th scope="row">{{ loop.index }}</th>
+        <td>{{ ticket.subject }}</td>
+        <td>{{ ticket.requester.name }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<ul class="pagination">
+  <li class="page-item {% if not prev_url %}disabled{% endif %}"><a class="page-link" href="{{ prev_url }}">Previous</a></li>
+  {% for page in pages %}
+    <li class="page-item {% if not page.url %}active{% endif %}"><a class="page-link" href="{% if page.url %}{{ page.url }}{% else %}#{% endif %}">{{ page.display_value }}</a></li>
+  {% endfor %}
+  <li class="page-item {% if not next_url %}disabled{% endif %}"><a class="page-link" href="{{ next_url }}">Next</a></li>
+</ul>
+{% endblock %}
+{% block script%}
+<script>
+  $("tr").click(function() {
+    var ticket_id = $(this).attr("data-attribute")
+    window.location.href = Flask.url_for("tickets.ticket", { ticket_id: ticket_id });
+  })
+</script>
+{% endblock %}
