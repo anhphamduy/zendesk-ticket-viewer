@@ -10,7 +10,7 @@
 
 Click here for more information on using pip and installing a virtual environment.
 
-```py
+```console
 $ python3 -m venv venv
 $ source venv/bin/activate
 (venv)$ pip install -r requirements.txt
