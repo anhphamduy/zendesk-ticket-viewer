@@ -18,7 +18,7 @@ def tickets():
     total_pages = math.ceil(len(tickets) / tickets_per_page)
     # restrict the bound of the page to min and max page
     page = min(max(request.args.get('page', 1, type=int), 1), tickets_per_page)
-    
+
     min_pagination = max(1, page - pagination_size)
     max_pagination = min(page + pagination_size, total_pages)
     pages = [dict(url=url_for('tickets.tickets', page=i) if i != page else None, display_value=i)
@@ -45,5 +45,5 @@ def ticket(ticket_id):
         ticket = current_app.zenpy.tickets(id=ticket_id)
     except APIException:
         abort(503)
-    
+
     return render_template("/tickets/ticket.html", ticket=ticket)
