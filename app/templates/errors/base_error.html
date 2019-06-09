@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>{% block error_content %}{% endblock %}</h1>
+  <h3>{% block error_content %}{% endblock %}</h3>
   <p><a href="{{ url_for('tickets.tickets') }}">Back</a></p>
 {% endblock %}
