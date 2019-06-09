@@ -18,7 +18,7 @@ def create_app(config_name):
     from app.errors import bp as errors_bp
     app.register_blueprint(errors_bp)
 
-    from app.tickets import bp as main_bp
-    app.register_blueprint(main_bp)
+    from app.tickets import bp as tickets_bp
+    app.register_blueprint(tickets_bp)
 
     return app
