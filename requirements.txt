@@ -4,6 +4,7 @@ certifi==2019.3.9
 chardet==3.0.4
 Click==7.0
 Flask==1.0.3
+Flask-JSGlue==0.3.1
 future==0.17.1
 idna==2.8
 itsdangerous==1.1.0
@@ -15,6 +16,8 @@ python-dotenv==0.10.3
 pytz==2019.1
 requests==2.22.0
 six==1.12.0
+snapshottest==0.5.0
+termcolor==1.1.0
 urllib3==1.25.3
 Werkzeug==0.15.4
 zenpy==2.0.12

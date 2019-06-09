@@ -8,8 +8,6 @@ def create_app(config_name):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
 
-    jsglue.init_app(app)
-
     app.zenpy = Zenpy(**app.config['ZENDESK_CREDS'])
 
     from app.errors import bp as errors_bp
