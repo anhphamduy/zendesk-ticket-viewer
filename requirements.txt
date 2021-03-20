@@ -8,7 +8,7 @@ Flask-JSGlue==0.3.1
 future==0.17.1
 idna==2.8
 itsdangerous==1.1.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pycodestyle==2.5.0
 python-dateutil==2.8.0
