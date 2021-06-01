@@ -18,6 +18,6 @@ requests==2.22.0
 six==1.12.0
 snapshottest==0.5.0
 termcolor==1.1.0
-urllib3==1.25.3
+urllib3==1.26.5
 Werkzeug==0.15.4
 zenpy==2.0.12
